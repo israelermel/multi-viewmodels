@@ -20,12 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         SearchViewModel searchViewModel = new SearchViewModel();
 
-        clienteViewModel.setListener(new OnClickBtnListener() {
-            @Override
-            public void onClick(String valor) {
-                searchViewModel.add(valor);
-            }
-        });
+        clienteViewModel.setListener(searchViewModel.onListener());
 
         binding.setViewModel(clienteViewModel);
         binding.setSearchVM(searchViewModel);
